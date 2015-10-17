@@ -83,8 +83,13 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
         getInstrumentation().removeMonitor(receiverActivityMonitor);
 
         // test that the tweet editor starts up with the correct tweet
+        Tweet newest = (Tweet) oldTweetsList.getItemAtPosition(0);
+        assertEquals(tweetText, newestTweet.getText());
 
         // test that we can edit a tweet
+        newest.setText("Hi");
+        assertEquals(tweetText, newestTweet.getText());
+        //?
 
         // test that we can push a save button for the edited tweet
 
